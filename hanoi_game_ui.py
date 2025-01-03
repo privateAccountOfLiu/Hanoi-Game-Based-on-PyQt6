@@ -210,7 +210,7 @@ class TargetStack(Stack):
         self.timer_check_win.start(500)
 
     def check_win(self, time: QtCore.QTime):
-        if len(self.rects) == len(self.all_rects):
+        if self.rects == self.all_rects:
             self.timer_global.stop()
             QtWidgets.QMessageBox.warning(self.main_window, '游戏提示',
                                           f'游戏结束\nGrade: {time.toString("hh:mm:ss")}',
